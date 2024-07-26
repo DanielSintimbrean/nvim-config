@@ -11,13 +11,15 @@ return {
   },
   cmd = 'Neotree',
   keys = {
-    { '\\', ':Neotree reveal<CR>', desc = 'NeoTree reveal' },
+    { '<leader>e', ':Neotree reveal position=right<CR>', { desc = 'File [E]xplorer' } },
+    { '<leader>E', ':Neotree reveal_force_cwd position=right<CR>', { desc = 'File [E]xplorer (reveal file)' } },
   },
   opts = {
+    close_if_last_window = true,
     filesystem = {
       window = {
         mappings = {
-          ['\\'] = 'close_window',
+          ['<leader>e'] = 'close_window',
         },
       },
     },
